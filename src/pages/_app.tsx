@@ -3,6 +3,7 @@ import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 
 import { api } from "~/utils/api";
+import { SideNav } from "~/components/SideNav";
 
 import "~/styles/globals.css";
 import Head from "next/head";
@@ -18,8 +19,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <meta name="description" content="This is a twitter clone by Andre Rousselet following WDS tutorial" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container mx-auto flex">
-        {/* <SideNav /> */}
+      <div className="container mx-auto flex items-start sm:pr-4">
+        <SideNav />
         <div className="min-h-screen flex-grow border-x">
           <Component {...pageProps} />
         </div>
